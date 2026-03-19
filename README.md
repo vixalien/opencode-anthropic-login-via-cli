@@ -1,13 +1,13 @@
 # opencode-anthropic-login-via-cli
 
-Use Anthropic models in [OpenCode](https://github.com/nicepkg/opencode) with your Claude Pro/Max subscription — no API key needed.
+Use Anthropic models in [OpenCode](https://github.com/sst/opencode) with your Claude Pro/Max subscription — no API key needed.
 
 This plugin reads your Claude CLI OAuth token and injects it into OpenCode automatically. If the token is expired, it runs `claude` CLI to refresh it.
 
 ## Prerequisites
 
-- [OpenCode](https://github.com/nicepkg/opencode) installed
-- [Claude CLI](https://docs.anthropic.com/en/docs/claude-code) installed and logged in (`claude` command available)
+- [OpenCode](https://github.com/sst/opencode) installed
+- [Claude CLI](https://github.com/anthropics/claude-code) installed and logged in (`claude` command available)
 - Active Claude Pro or Max subscription
 
 ## Install
