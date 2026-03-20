@@ -2,28 +2,23 @@
 
 Use Anthropic models in [OpenCode](https://github.com/sst/opencode) with your **Claude Pro/Max subscription** — no API key needed.
 
-Just log into Claude CLI once, and Anthropic models work in OpenCode automatically.
+## Auth Methods
 
-## How it works
+### Auto — Claude CLI credentials
 
-```
-Claude CLI (OAuth token)  -->  Plugin  -->  OpenCode
-     macOS Keychain                     x-api-key header
-     or ~/.claude/.credentials.json     + auth.json sync
-```
+If you have [Claude CLI](https://github.com/anthropics/claude-code) installed and logged in, the plugin picks up your credentials automatically. Nothing else to do.
 
-- Reads your Claude CLI OAuth token on startup
-- On **macOS**: reads from the system Keychain (`Claude Code-credentials`)
-- On **Linux**: reads from `~/.claude/.credentials.json`
-- Injects the token into every Anthropic API call
-- Auto-refreshes when the token is about to expire
-- Syncs credentials to `~/.local/share/opencode/auth.json`
+- macOS: reads from system Keychain
+- Linux: reads from `~/.claude/.credentials.json`
+- Tokens are refreshed automatically
 
-## Prerequisites
+### Browser — OAuth via claude.ai
 
-- [OpenCode](https://github.com/sst/opencode)
-- [Claude CLI](https://github.com/anthropics/claude-code) logged in (`claude auth status`)
-- Claude Pro or Max subscription
+Don't have Claude CLI? No problem. The browser method opens an OAuth flow through `claude.ai` directly. Just log in with your Claude Pro/Max account.
+
+### API Key
+
+You can also enter an Anthropic API key manually if you prefer.
 
 ## Install
 
@@ -35,9 +30,7 @@ Add to your `opencode.json`:
 }
 ```
 
-OpenCode installs npm plugins automatically on startup. No `bun add` or `npm install` needed.
-
-That's it. No API key, no provider config needed.
+Then open OpenCode and go to **Connect Provider > Anthropic**.
 
 ## License
 
